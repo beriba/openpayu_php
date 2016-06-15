@@ -45,6 +45,10 @@ class OpenPayU_Configuration
      */
     private static $oauthTokenCache = null;
 
+    private static $oauthGrantType = OauthGrantType::CLIENT_CREDENTIAL;
+    private static $oauthEmail = '';
+    private static $oauthExtCustomerId;
+
     private static $serviceUrl = '';
     private static $hashAlgorithm = 'SHA-256';
 
@@ -205,6 +209,54 @@ class OpenPayU_Configuration
     public static function getOauthTokenCache()
     {
         return self::$oauthTokenCache;
+    }
+
+    /**
+     * @return string
+     */
+    public static function getOauthGrantType()
+    {
+        return self::$oauthGrantType;
+    }
+
+    /**
+     * @param string $oauthGrantType
+     */
+    public static function setOauthGrantType($oauthGrantType)
+    {
+        self::$oauthGrantType = $oauthGrantType;
+    }
+
+    /**
+     * @return string
+     */
+    public static function getOauthEmail()
+    {
+        return self::$oauthEmail;
+    }
+
+    /**
+     * @param string $oauthEmail
+     */
+    public static function setOauthEmail($oauthEmail)
+    {
+        self::$oauthEmail = $oauthEmail;
+    }
+
+    /**
+     * @return integer
+     */
+    public static function getOauthExtCustomerId()
+    {
+        return self::$oauthExtCustomerId;
+    }
+
+    /**
+     * @param integer $oauthExtCustomerId
+     */
+    public static function setOauthExtCustomerId($oauthExtCustomerId)
+    {
+        self::$oauthExtCustomerId = $oauthExtCustomerId;
     }
 
     /**
